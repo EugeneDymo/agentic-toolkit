@@ -1,0 +1,17 @@
+{
+  "base_url": "https://jira.example.invalid",
+  "project_key": "DEMO",
+  "jql": "project = DEMO AND issuetype != Epic ORDER BY created ASC",
+  "title": "Example delivery scope",
+  "story_points_field": "customfield_99999",
+  "status_mapping": {
+    "Queued": "backlog",
+    "Building": "active",
+    "Peer check": "review",
+    "Verification": "qa",
+    "Paused": "hold",
+    "Shipped": "done",
+    "Abandoned": "cancelled"
+  },
+  "aging_days": {"active": 7, "review": 3, "qa": 3, "hold": 30}
+}

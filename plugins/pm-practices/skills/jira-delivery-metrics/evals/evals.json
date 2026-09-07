@@ -1,0 +1,26 @@
+{
+  "skill_name": "jira-delivery-metrics",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Use jira-delivery-metrics with the supplied config and existing normal snapshot. Regenerate the local stages and write delivery-report.md. Explain delivery trends, QA, aging and when the remaining backlog might clear. Do not fetch live data.",
+      "expectations": [
+        "Reports three complete UTC weeks with ticket throughput 1, 0, 1 and point velocity 2 per week.",
+        "Finds median cycle 9 days, P85 16 days, with two observations; QA has 3 entries and 1 return, not two proven passes.",
+        "Counts the paused 6-point ticket in remaining work and gives a conditional three-week scenario from the snapshot (2026-09-14), not today's date.",
+        "Attribution does not credit the simultaneous review handoff as development contribution.",
+        "Reports private local output, stale snapshot date and limitations; makes no live calls or ticket changes."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Use jira-delivery-metrics with the supplied config and existing missing snapshot. Regenerate the local stages and write delivery-report.md. Explain delivery trends, QA, aging and when the remaining backlog might clear. Do not fetch live data.",
+      "expectations": [
+        "Reports one unestimated remaining ticket, not zero remaining work.",
+        "Does not promise a clearance date; explains that point forecast is unavailable while ticket throughput remains usable.",
+        "Preserves 1, 0, 1 complete-week ticket throughput and the snapshot date.",
+        "Produces a separate report without mixing the other snapshot's forecast or files."
+      ]
+    }
+  ]
+}
