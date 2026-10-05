@@ -22,7 +22,7 @@ generated private reports remain outside git.
   unfinished placeholders; obsolete scaffold directory is absent.
 - PASS: instruction inspection found no fixed project, appendix, version, or
   milestone assumptions. Entrypoint is 168 lines. Project terms occur in the
-  explicitly separate PLT evaluation.
+  explicitly separate private-document evaluation.
 
 ## Input SHA-256 hashes
 
@@ -58,21 +58,12 @@ Artifacts: `synthetic-selected/output/coverage-assessment.md` and
 | limits | PASS — Selection limits explicitly states whole-SoW completeness was not assessed and global sweep/full historical reconciliation were not performed. Its five-item context table is explicitly not a global sweep. |
 | boundaries | PASS — B1 keeps Loan history outside selected ownership, cites both boundaries without claiming exhaustive Lending desk coverage; X1 cites the refund exclusion. |
 
-## PLT full run — PASS
+## Private full run — PASS
 
-Artifacts: `plt-full/output/coverage-assessment.md` and the five milestone
-assessments linked from its Milestone filename mapping section. Both private
-fixtures were available; no cases were skipped.
-
-| Expectation | Result and evidence |
-|---|---|
-| booker-history | PASS — I01 surfaces the inquiry-list/status coverage risk separately from creation I02 and dashboard K11, with current-source evidence and historical H91b. It classifies the list as implicit with a clarification request rather than absent as in the old report. The evaluation checks that the risk is surfaced with evidence, not an identical classification. |
-| carve-outs | PASS — exclusion X03 preserves the agreed authentication mechanisms; historical H159a cites the task-workflow exclusion while H159b retains distinct system messages. |
-| relocation | PASS — H38a records authentication relocation, H82a/b and H85a/b settings relocation. The historical ledger uses all five statuses and does not turn relocation into loss. |
-| boundary | PASS — I05 and decision D6 identify the inquiry/booking communication timing boundary, cite both plan bullets and the shared capability definition, and request clarification. |
-| unmapped-milestone | PASS — M5 reverse-check, supporting findings, and decisions D8/D10 distinguish the agent increment from shared baseline features, preserve the validation conflict, and identify missing behavioral acceptance definitions. The executor correctly reads the supplied acceptance clause as conditional rather than copying the old report's stronger interpretation. |
-| ledger | PASS — Complete source inventory and reconciled ledger accounts for 123 feature units; original Appendix B text was compared with the entries, including shared role matrices and separately listed exclusions. Arithmetic checks confirm 53 explicit + 54 implicit + 16 absent, matching the milestone reports. Historical reconciliation has 81 unique part IDs whose 58 parent line numbers exactly match the source delivery-line inventory: 26 retained + 28 moved + 1 excluded + 8 dropped + 18 unresolved. |
-| outputs | PASS — five milestone reports plus merged assessment contain evidence, decisions, limitations, and sequential-mode disclosure. Report links resolve; no tracker calls or missing-ticket/implementation claims. |
+Both private fixtures were available; no cases were skipped. All seven
+expectations passed. The per-expectation evidence names private document
+content, so it is kept in the private results file next to the private case
+definition outside git.
 
 No failed cases or reruns were needed. Classification and grouping differ from
 the historical assessment, as allowed by the grading criteria. This pass is not

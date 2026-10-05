@@ -64,42 +64,9 @@
       ]
     },
     {
-      "id": "plt-full",
-      "private_inputs": [
-        "drafts/sow/sow-v1.5.0.md",
-        "drafts/sow/sow-v0.0.5-milestones.md"
-      ],
-      "prompt": "Use requirements-coverage-audit to analyze all milestones in sow-v1.5.0.md, using sow-v0.0.5-milestones.md as historical scope. In the current document, Appendix B is authoritative capability scope, Requirements and Solution are supporting evidence, and exclusion and Future Phases sections filter scope subject to their actual wording and contradictions. Write reports to the supplied output directory. Work sequentially without additional agents.",
-      "expectations": [
-        {
-          "id": "booker-history",
-          "assertion": "Find the Booker inquiries list/status view coverage gap with current and historical source evidence, distinguishing it from inquiry creation and the dashboard."
-        },
-        {
-          "id": "carve-outs",
-          "assertion": "Recognize social login and passkeys as agreed mechanisms within the MFA exclusion carve-out; do not exclude them wholesale. Treat the execution checklist/task management exclusion as cited removal, not a lost feature."
-        },
-        {
-          "id": "relocation",
-          "assertion": "Recognize authentication moving from historical M1 to current M2 and settings to current M4; moved features are not automatically missing. Reconcile historical items with all five statuses available."
-        },
-        {
-          "id": "boundary",
-          "assertion": "Identify the inquiry/booking communication boundary between M2 and M3 as a clarification decision, supported by both milestone and capability wording."
-        },
-        {
-          "id": "unmapped-milestone",
-          "assertion": "Identify M5's missing authoritative acceptance mapping, overlap, and automated-validation exclusion contradiction; use Requirements/Solution as supporting evidence without silently promoting them to authority."
-        },
-        {
-          "id": "ledger",
-          "assertion": "Provide an auditable full authoritative inventory-to-ledger mapping, historical reconciliation, and reconciled totals. No exact 34-absent count is required. Source gaps, if any, must be disclosed and fail the completeness assertion rather than pass on a claimed total."
-        },
-        {
-          "id": "outputs",
-          "assertion": "Produce five milestone reports plus merged assessment with sources, limitations, and sequential execution disclosure. Do not use Jira or claim missing tickets or implemented behavior."
-        }
-      ]
+      "id": "private-full",
+      "private_case": "drafts/evals/requirements-coverage-audit-private-case.json",
+      "note": "Real-document regression case. Its prompt, private inputs and expectations stay in the private file outside git. A missing file means the case is skipped, not passed."
     },
     {
       "id": "jira-three-way",

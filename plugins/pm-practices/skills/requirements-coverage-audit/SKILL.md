@@ -8,7 +8,7 @@ description: >
   and unsupported additions to sources. Read-only scope audit, not ticket-quality
   scoring, ticket refinement, or implementation verification.
 metadata:
-  version: "0.2.0"
+  version: "0.1.0"
 ---
 
 # Requirements coverage audit
@@ -31,8 +31,11 @@ Accept paths and source-role assignments in ordinary language or invocation argu
 - `--supporting PATH`: optional requirements, architecture, or recorded decisions.
 - `--exclusions PATH`: optional exclusions or future-scope source.
 - `--milestone NAME`: optional selection; default is all milestones.
-- `--output DIR`: default `analysis/` beside the document plan, or under the working
-  directory when no document plan is supplied. Resolve the primary plan if several exist.
+- `--output DIR`: optional persistent private directory. Without it, write to a
+  new timestamped directory under the system temporary directory and say that
+  it is temporary. Honor a user-chosen directory only after checking it is not
+  tracked or exposed to version control; do not modify ignore rules to make it
+  so. Resolve the primary plan if several exist.
 
 These are interpretation conventions, not an executable CLI or a project config.
 Require authoritative scope and at least one delivery-plan source; one document can
@@ -173,15 +176,22 @@ unassessed scope as absent. Distinguish coverage inside the selected milestone f
 coverage evidenced elsewhere; inaccessible other milestones remain unassessed.
 Include relevant historical comparisons locally.
 
+Before presenting a report, a draft, a proposal or a list of questions, run the
+voice pass in `${CLAUDE_PLUGIN_ROOT}/references/voice.md` over the prose. It
+changes wording only: never a key, a label, a count, a citation, a recommended
+fix or a severity. The readers include people with intermediate English, so
+every sentence must be understood in one read.
+
 ### 4. Write the reports
 
 Read [references/report-shapes.md](references/report-shapes.md) when preparing
 briefs or outputs. Write one milestone assessment per analyzed milestone and one
 merged coverage assessment, even when the selection is a single milestone.
 Use `milestone-<derived-name>-assessment.md` and `coverage-assessment.md`; disambiguate
-colliding names using source order and record the mapping. Honor the output
-override; on reruns preserve existing reports in a dated run directory unless
-the user requested replacement.
+colliding names using source order and record the mapping. Write to the output
+directory resolved above (a private temporary directory unless the user supplied
+an untracked one); on reruns preserve existing reports in a dated run directory
+unless the user requested replacement.
 
 Include source citations, absent and implicit findings, exclusions, unsupported
 bullets, boundary resolutions, unresolved decisions, cross-cutting findings,

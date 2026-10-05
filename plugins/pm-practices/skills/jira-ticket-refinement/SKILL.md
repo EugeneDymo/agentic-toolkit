@@ -2,7 +2,7 @@
 name: jira-ticket-refinement
 description: Refine Jira tickets by drafting descriptions, acceptance criteria, development tasks, story points and project fields for user approval. Use for "triage a ticket", "bulk triage", "groom the backlog", "write this ticket description" or "find untriaged tickets". Finding candidates is read-only; this is not a ticket-quality audit, requirements-coverage audit, sprint planner or delivery report.
 metadata:
-  version: 0.1.0
+  version: "0.1.0"
 ---
 
 # Jira ticket refinement
@@ -23,8 +23,8 @@ writes; never apply edits to a live JQL result that can change under approval.
 
 Read [fields-and-config.md](references/fields-and-config.md) for project settings
 and tool payloads. Reuse an explicitly supplied/previously established
-`jira-project.json` from delivery metrics when present; otherwise use arguments.
-Do not require metrics-only settings or the metrics skill to be installed.
+`jira-project.json` shared by the sibling skills when present; otherwise use arguments.
+Do not require settings that another skill adds to that file.
 Explicit invocation values override file values, but site/project conflicts need
 confirmation before live access. Do not search unrelated directories for config.
 
@@ -86,6 +86,12 @@ Infer optional select values only from verified project mappings and evidence;
 ask if multiple options fit. A title prefix is a hint, not authority to choose
 an enum ID. Fields-only refinement does not require rewriting the description.
 
+Before presenting a report, a draft, a proposal or a list of questions, run the
+voice pass in `${CLAUDE_PLUGIN_ROOT}/references/voice.md` over the prose. It
+changes wording only: never a key, a label, a count, a citation, a recommended
+fix or a severity. The readers include people with intermediate English, so
+every sentence must be understood in one read.
+
 ## Approval and apply
 
 Always present exact ticket keys, changed fields and final proposed content,
@@ -97,8 +103,11 @@ and report its temporary nature. Preserve existing files unless replacement was
 requested. Never store tokens or account secrets in these artifacts.
 
 Before writing, read the supported payload/transport rules in
-[fields-and-config.md](references/fields-and-config.md). Confirm the active site
-and exact issue. Re-read the live ticket immediately before each write and compare
+[fields-and-config.md](references/fields-and-config.md). Write the description
+as an Atlassian Document Format (ADF) document built from the approved draft,
+never as a markdown or plain-text string: Jira Cloud stores descriptions as
+ADF, and a string replaces the approved headings, lists and links with one
+unformatted block. Confirm the active site and exact issue. Re-read the live ticket immediately before each write and compare
 the approved baseline: updated timestamp, changed fields, status and controlling
 comments/requirements. If anything relevant changed or freshness cannot be
 established, pause that ticket, refresh its proposal and request renewed approval.

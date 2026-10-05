@@ -1,7 +1,7 @@
 {
   "name": "pm-practices",
   "version": "0.1.0",
-  "description": "Project-management skills for requirements coverage across documents and Jira plans, Jira ticket-quality audits, approval-based ticket refinement, and changelog-based delivery metrics. Includes requirements-coverage-audit, jira-ticket-quality-audit, jira-ticket-refinement, and jira-delivery-metrics.",
+  "description": "Project-management skills for requirements coverage across documents and Jira plans, Jira ticket-quality audits, approval-based ticket refinement, and rubric-checked creation of new tickets. Includes requirements-coverage-audit, jira-ticket-quality-audit, jira-ticket-refinement, and jira-ticket-creation.",
   "author": {
     "name": "Postindustria Tech",
     "email": "tech@postindustria.com"
@@ -16,9 +16,7 @@
     "jira",
     "ticket-quality",
     "ticket-refinement",
-    "delivery-metrics",
-    "cycle-time",
-    "throughput"
+    "ticket-creation"
   ],
   "license": "MIT"
 }

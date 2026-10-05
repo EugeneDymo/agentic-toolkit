@@ -1,11 +1,10 @@
 # Config and field identity
 
 Read the supplied/established private `jira-project.json` if it exists; otherwise
-take the equivalent values from the user. Reuse delivery-metrics keys:
-`base_url`, `project_key`, `story_points_field` (custom field ID or null). Do not
-invoke its config validator: refinement does not require its JQL, title, status
-mapping or aging thresholds. Do not repurpose the metrics JQL as bulk triage
-scope. A missing explicit config path is reported; proceed from arguments only
+take the equivalent values from the user. Reuse the shared keys:
+`base_url`, `project_key`, `story_points_field` (custom field ID or null). Refinement does not
+require any JQL, title, status mapping or threshold the file may also hold for
+other skills, and does not repurpose such a JQL as bulk triage scope. A missing explicit config path is reported; proceed from arguments only
 if they resolve the needed settings, not by silently selecting another site.
 
 Optional refinement settings in the same file can identify extra fields:
@@ -101,8 +100,10 @@ allowed operation, not just this example. Omit unchanged fields. Clearing a
 field requires explicit approval and its documented empty representation; neither
 "always null" nor "never null" is correct for every field.
 
-REST v3 rich descriptions use an ADF document, not markdown or a list of text
-lines. A connector may explicitly support a markdown-string conversion mode;
+Every description write, through ACLI or REST, carries an Atlassian Document
+Format (ADF) document, not markdown or a list of text lines. Build `heading`,
+`paragraph`, `bulletList`/`orderedList` with `listItem`, `text` with `link`
+marks and `codeBlock` nodes from the approved draft. A connector may explicitly support a markdown-string conversion mode;
 use that only if its tool schema documents it. Preserve paragraphs, heading
 levels, lists and links semantically; do not retry by blindly changing formats.
 Prefer source-provided comment URLs. Otherwise cite the issue URL plus exact

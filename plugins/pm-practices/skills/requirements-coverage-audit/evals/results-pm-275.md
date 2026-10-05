@@ -89,15 +89,8 @@ does not sum parent/child counts or claim a global coverage sweep.
 
 ## Private document regression
 
-| Expectation | Result and output evidence |
-|---|---|
-| booker-history | PASS — B095 and M2 table surface inquiry-list/status risk separately from creation and dashboard, with current anchor and historical H038. Listing is implicit/needs-clarification, not a verbatim reproduction of the old absent classification. |
-| carve-outs | PASS — D1/X1/X4 preserve social login/passkeys despite advanced-auth exclusions; H066 cites the task-workflow exclusion, retaining system messages separately as H067. |
-| relocation | PASS — H014 moves authentication to M2; H032–H034 move settings to M4; all five historical classifications are used. |
-| boundary | PASS — D13, B099 and M2/M3 boundary sections identify inquiry communication's dependence on the later booking communication foundation and request reviewable sequencing. |
-| unmapped-milestone | PASS — M5 separately assesses all 12 agent-specific promises, reused capabilities, D12 validation conflict and missing acceptance detail. Supporting concepts are not promoted to current authority. |
-| ledger | PASS — source-to-ledger review covers current capability sections and role differences. 129 unique rows match milestone rows exactly: 53 explicit + 57 implicit + 19 absent. All 58 historical task lines appear in 72 split/task rows, plus 3 separately identified release summaries. Historical total: 27 retained + 27 moved + 1 excluded + 8 dropped + 12 unresolved = 75. |
-| outputs | PASS — five milestone reports plus merged report, citations/limitations and sequential disclosure; no Jira or implementation claims. |
+All seven expectations passed. The per-expectation evidence names private
+document content, so it is kept in the private results file outside git.
 
 All six cases passed; no case was skipped or rerun. Granularity differs between
 runs: linked splits are allowed, but totals must reconcile within a run. The private

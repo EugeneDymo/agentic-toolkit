@@ -30,7 +30,10 @@ conventions, not an executable CLI. No project config file is required:
 - `--exclude-statuses NAMES`: completed and QA-accepted workflow states.
 - `--repo PATH --base REF`: optional repository and team base branch for code claims.
 - `--previous PATH`: optional previous assessment for a rerun comparison.
-- `--output DIR`: defaults to `analysis/` under the working directory.
+- `--output DIR`: optional persistent private directory. Without it, write to a
+  new timestamped directory under the system temporary directory and say that
+  it is temporary. Honor a user-chosen directory only after checking it is not
+  tracked or exposed to version control; do not modify ignore rules to make it so.
 
 Resolve the project/filter/keys and workflow semantics before filtering. Assess
 tickets whose text can still change development or acceptance: include active QA,
@@ -129,10 +132,17 @@ actions in the ticket remain valid: name both. A stale local ref does not prove
 the remote state. This is narrow claim verification, not feature testing or an
 authorization to implement fixes.
 
+Before presenting a report, a draft, a proposal or a list of questions, run the
+voice pass in `${CLAUDE_PLUGIN_ROOT}/references/voice.md` over the prose. It
+changes wording only: never a key, a label, a count, a citation, a recommended
+fix or a severity. The readers include people with intermediate English, so
+every sentence must be understood in one read.
+
 ## 3. Report
 
-Write `ticket-quality-assessment.md` in the selected directory. Preserve existing
-reports in a dated run directory on reruns unless replacement was requested.
+Write `ticket-quality-assessment.md` in the output directory resolved above (a
+private temporary directory unless the user supplied an untracked one). Preserve
+existing reports in a dated run directory on reruns unless replacement was requested.
 Keep real exports, private artifacts and reports outside version control; do not
 embed customer identifiers, site/cloud/custom-field values or credentials in
 shipped skill resources. Synthetic fixtures use invented identifiers.

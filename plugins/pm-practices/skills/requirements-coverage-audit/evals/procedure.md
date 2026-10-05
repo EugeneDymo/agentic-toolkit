@@ -30,9 +30,11 @@ matches is not the criterion. The below-about-500-line entrypoint target is soft
 ## Behavioral runs
 
 1. Read evals.json as coordinator. Resolve public fixture paths relative to evals/
-   and private input paths relative to the repository root. Keep private documents
-   and generated private reports outside git; never commit copies of drafts/.
-   Missing private fixtures mean the PLT case is skipped, not passed. Synthetic
+   and private input paths relative to the repository root. A case may instead
+   point to a private case file; read its prompt, inputs and expectations there.
+   Keep private documents and generated private reports outside git; never
+   commit copies of drafts/.
+   Missing private fixtures mean the private case is skipped, not passed. Synthetic
    cases are required and must pass. Record unvalidated criteria explicitly.
 2. For each case create a fresh temporary directory (mktemp -d), containing only
    SKILL.md, its runtime references, that case's raw documents/export pages, and an output
@@ -50,7 +52,7 @@ matches is not the criterion. The below-about-500-line entrypoint target is soft
 4. Read the generated artifacts as grader and compare each expectation to source
    evidence, recording pass/fail plus report file and section. Evaluate meaning,
    not exact prose or regex matches. Read every inventory/ledger row and reconcile
-   counts. For PLT, enumerate source capabilities and historical items against
+   counts. For the private case, enumerate source capabilities and historical items against
    the submitted ledger; a polished report with an unsupported completeness
    assertion must fail. Old assessment reports may guide review, but their counts
    and judgments are not ground truth and never go to the executor.
