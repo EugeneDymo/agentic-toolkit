@@ -24,8 +24,11 @@ Private config supplied for this exercise:
 base_url=https://jira.example.invalid; project_key=DEMO;
 story_points_field=customfield_99999.
 Issue types from the project view: Epic (hierarchy 1), Task and Bug (hierarchy 0),
-Subtask (hierarchy -1, subtask). Story is not enabled. Required on create for all
-types: Project, Reporter, Summary; Subtask also requires Parent.
+Subtask (hierarchy -1, subtask). Story is not enabled.
+Create metadata for Task: page 1 of the fields list (startAt 0, maxResults 50,
+total 61) shows Project, Reporter and Summary as required; page 2 (items 51 to
+61) was not retrieved. Create metadata for Subtask: complete, requires Project,
+Reporter, Summary and Parent.
 Only ACLI 1.3.29 is available. No live requests are permitted.
 
 ## Duplicate search export

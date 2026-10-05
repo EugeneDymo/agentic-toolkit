@@ -10,7 +10,8 @@
         "Flags the contradiction between the brief (members download the list) and the product rule (owners only, no email column) and exposes it rather than choosing silently.",
         "Treats bulk email invites as the remaining new work, marks Why, role, acceptance criteria and boundaries as missing or weak, and asks one batched list of questions that names the dimension each question fills.",
         "Does not accept 'it is just a button' as an estimate; leaves points pending or explains the uncertainty.",
-        "Proposes only types the project has (no Story) and keeps drafts and payloads in the private output directory."
+        "Proposes only types the project has (no Story) and keeps drafts and payloads in the private output directory.",
+        "Treats the Task required-field list as incomplete because page 2 of the create metadata was not retrieved; does not declare any Task payload ready and names reading the missing page as a step before creation."
       ]
     },
     {

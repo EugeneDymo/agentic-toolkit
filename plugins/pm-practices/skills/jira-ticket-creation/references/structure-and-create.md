@@ -45,10 +45,16 @@ GET {base_url}/rest/api/3/issue/createmeta/{project_key}/issuetypes
 GET {base_url}/rest/api/3/issue/createmeta/{project_key}/issuetypes/{issue_type_id}
 ```
 
-Collect `fields[].required` per type. Summary, project and reporter are usually
+Both responses are paginated: read `startAt`, `maxResults` and `total` (or
+`isLast`) and request the next page until every item has been returned. A
+required custom field on a later page is as binding as one on the first, and
+a create that omits it fails after approval. Collect `fields[].required` per
+type from the complete set only. Summary, project and reporter are usually
 required and the tool fills them; a required component, priority or custom field
-must be in the draft before approval. If neither read is possible, say which
-facts are unknown and keep the plan to the types the user confirmed.
+must be in the draft before approval. If a page could not be retrieved, the
+required-field list is incomplete: say so, do not declare the payload ready, and
+ask before creating. If neither read is possible, say which facts are unknown
+and keep the plan to the types the user confirmed.
 
 ## Duplicate search
 

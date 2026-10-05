@@ -87,7 +87,12 @@ notation, not prose; keep it.
 
 ## Idiom checklist
 
-Search the draft for each phrase below, verbatim. Every hit is a rewrite.
+Search the draft for each phrase below, verbatim. Every hit in prose is a
+rewrite. Labels and notations defined by a skill are exempt: the rubric labels
+(good, weak, missing, incorrect, n/a, unassessed), the coverage labels
+(explicit, implicit, absent, ticketed, partial, no ticket, unknown) and any
+column heading or status name quoted from Jira stay exactly as defined, in
+tables and in prose that refers to them.
 
 | Idiom | Write instead |
 |---|---|
@@ -106,37 +111,41 @@ Search the draft for each phrase below, verbatim. Every hit is a rewrite.
 | carve-out | an exception written into the exclusion |
 | blast radius | the parts of the system the change affects |
 | workflow slice | the statuses or tickets selected for this run |
-| ticketed | has a ticket |
 | groom the backlog | refine the backlog |
 | sweep | a check of every item |
 | light pass | the shorter check for small tickets, as the rubric defines it |
 
 ## Before and after, from PM outputs
 
+Each pair below carries the same facts on both sides. The pass rewrites the
+sentence; it never adds a fact the finding did not already contain.
+
 **Audit finding.**
-Before: "AC is weak and the deferral isn't just untracked, it's a readiness
-blocker; consider surfacing a destination."
+Before: "AC weak ('works correctly', not pass/fail-able) and the invites
+deferral isn't just untracked, it's a readiness blocker; consider surfacing a
+destination or a decision."
 After: "The acceptance criteria cannot be marked pass or fail: 'works
 correctly' is not an observable outcome. The invites deferral has no
 destination ticket. Until one exists, this ticket is not ready to build. Name
 the destination ticket or record the deferral as a decision."
 
 **Coverage row explanation.**
-Before: "Implicit under the M2 auth bullet; the carve-out blesses social
-login, so not a gap per se."
+Before: "Implicit under the M2 auth bullet (not named there); the MFA
+exclusion's carve-out blesses social login, so not a gap per se, placement
+TBC."
 After: "The M2 bullet 'Authentication' does not name social login. The
 exclusion section removes multi-factor authentication but keeps social login
 as an agreed mechanism, so social login is still in scope. It is listed as
 implicit under M2, with a request to confirm that placement."
 
 **Acceptance criterion in a draft.**
-Before: "Non-member recipients bail with a validation error."
+Before: "Non-member recipients bail on save with a validation error."
 After: "If a recipient is not a current member of the workspace, saving the
-schedule fails with a message that names that recipient, and no schedule is
-saved."
+schedule fails with a validation error."
 
 **Question to the user.**
-Before: "Need the Why; also unclear who 'admin' is (role surface?)."
+Before: "Need the Why (reviewer can't judge the problem otherwise); also
+unclear who 'admin' is, the AC permission rule hangs on it."
 After: "Why: what problem do admins have today that this change solves? The
 reviewer needs it to judge whether the change solves the right problem. Role:
 which role is 'admin' here? The permission rule in the acceptance criteria
